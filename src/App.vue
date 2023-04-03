@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+
+const count = ref(0);
 
 onMounted(() => {
   let script = document.createElement("script");
@@ -17,6 +19,7 @@ onMounted(() => {
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <button type="button" @click="count++">count is {{ count }}</button>
     <custom-react />
   </div>
 </template>
