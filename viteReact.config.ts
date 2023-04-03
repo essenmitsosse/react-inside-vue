@@ -13,6 +13,7 @@ export default defineConfig({
       entry: "src/main.jsx",
       name: "Some React Component",
       fileName: "some-react-component",
+      formats: ["es"],
     },
     rollupOptions: {
       output: {
