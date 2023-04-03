@@ -6,4 +6,7 @@ export default defineConfig({
   plugins: [react()],
   appType: "spa",
   root: "reactComponent",
+  build: {
+    outDir: "../distReact",
+  },
 });
