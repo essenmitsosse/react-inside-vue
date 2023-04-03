@@ -7,6 +7,15 @@ export default defineConfig({
   appType: "spa",
   root: "reactComponent",
   build: {
-    outDir: "../distReact",
+    lib: {
+      entry: "src/main.tsx",
+      name: "Some React Component",
+      fileName: "some-react-component",
+    },
+    rollupOptions: {
+      output: {
+        dir: "distReact",
+      },
+    },
   },
 });
