@@ -4,13 +4,7 @@ import { onMounted } from "vue";
 onMounted(() => {
   let script = document.createElement("script");
   script.setAttribute("type", "module");
-
-  [
-    "globalThis.process = {};",
-    'import initApp from "/distReact/some-react-component.js";',
-    "initApp(document.getElementById('react-app'));",
-  ].forEach((node) => script.appendChild(document.createTextNode(node)));
-
+  script.setAttribute("src", "/distReact/some-react-component.js");
   document.head.appendChild(script);
 });
 </script>
@@ -23,7 +17,7 @@ onMounted(() => {
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
-    <div id="react-app"></div>
+    <custom-react />
   </div>
 </template>
 
