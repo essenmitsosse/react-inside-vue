@@ -21,7 +21,7 @@ onMounted(() => {
     </a>
   </div>
   <button type="button" @click="count++">count is {{ count }}</button>
-  <custom-react />
+  <custom-react :value="count" />
 </template>
 
 <style scoped>

@@ -16,7 +16,7 @@ class CustomReact extends HTMLElement {
 
     this.ReactDOMRoot.render(
       <React.StrictMode>
-        <App />
+        <App value={value} />
       </React.StrictMode>
     );
 
@@ -28,6 +28,20 @@ class CustomReact extends HTMLElement {
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot.append(docStyle, docStyle2, this.mountPoint);
+  }
+
+  static get observedAttributes() {
+    return ["value"];
+  }
+
+  attributeChangedCallback(nameValue, oldValue, newValue) {
+    if (nameValue === "value") {
+      this.ReactDOMRoot.render(
+        <React.StrictMode>
+          <App value={newValue} />
+        </React.StrictMode>
+      );
+    }
   }
 }
 
