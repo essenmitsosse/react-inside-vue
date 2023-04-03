@@ -9,7 +9,7 @@ export default defineConfig({
   publicDir: false,
   build: {
     lib: {
-      entry: "src/main.tsx",
+      entry: "src/main.jsx",
       name: "Some React Component",
       fileName: "some-react-component",
     },
