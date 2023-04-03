@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import { onMounted } from "vue";
+
+onMounted(() => {
+  let script = document.createElement("script");
+  script.setAttribute("type", "module");
+
+  [
+    "globalThis.process = {};",
+    'import initApp from "/distReact/some-react-component.js";',
+    "initApp(document.getElementById('react-app'));",
+  ].forEach((node) => script.appendChild(document.createTextNode(node)));
+
+  document.head.appendChild(script);
+});
+</script>
+
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -6,6 +23,7 @@
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <div id="react-app"></div>
   </div>
 </template>
 
