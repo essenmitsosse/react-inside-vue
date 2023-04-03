@@ -12,13 +12,7 @@ class CustomReact extends HTMLElement {
   }
 
   connectedCallback() {
-    const value = this.getAttribute("value");
-
-    this.ReactDOMRoot.render(
-      <React.StrictMode>
-        <App value={value} />
-      </React.StrictMode>
-    );
+    this.rerender();
 
     const docStyle = document.createElement("style");
     docStyle.textContent = style;
@@ -34,13 +28,17 @@ class CustomReact extends HTMLElement {
     return ["value"];
   }
 
+  rerender() {
+    this.ReactDOMRoot.render(
+      <React.StrictMode>
+        <App value={this.getAttribute("value")} />
+      </React.StrictMode>
+    );
+  }
+
   attributeChangedCallback(nameValue, oldValue, newValue) {
     if (nameValue === "value") {
-      this.ReactDOMRoot.render(
-        <React.StrictMode>
-          <App value={newValue} />
-        </React.StrictMode>
-      );
+      this.rerender();
     }
   }
 }
