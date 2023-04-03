@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "vite --config viteReact.config.ts",
+    "build": "tsc && vite build --config viteReact.config.ts",
+    "preview": "vite preview --config viteReact.config.ts",
     "prettier": "prettier --write ."
   },
   "dependencies": {
