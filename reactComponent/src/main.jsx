@@ -5,10 +5,16 @@ import style from "./index.css";
 import styleApp from "./App.css";
 
 class CustomReact extends HTMLElement {
-  connectedCallback() {
-    const mountPoint = document.createElement("div");
+  constructor() {
+    super();
+    this.mountPoint = document.createElement("div");
+    this.ReactDOMRoot = ReactDOM.createRoot(this.mountPoint);
+  }
 
-    ReactDOM.createRoot(mountPoint).render(
+  connectedCallback() {
+    const value = this.getAttribute("value");
+
+    this.ReactDOMRoot.render(
       <React.StrictMode>
         <App />
       </React.StrictMode>
@@ -21,7 +27,7 @@ class CustomReact extends HTMLElement {
     docStyle2.textContent = styleApp;
 
     this.attachShadow({ mode: "open" });
-    this.shadowRoot.append(docStyle, docStyle2, mountPoint);
+    this.shadowRoot.append(docStyle, docStyle2, this.mountPoint);
   }
 }
 
