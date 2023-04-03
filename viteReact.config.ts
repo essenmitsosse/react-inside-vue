@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   appType: "spa",
   root: "reactComponent",
+  publicDir: false,
   build: {
     lib: {
       entry: "src/main.tsx",
