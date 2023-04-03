@@ -10,4 +10,4 @@ const initApp = (element) =>
     </React.StrictMode>
   );
 
-initApp(document.getElementById("root"));
+export default initApp;

@@ -8,6 +8,10 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module">
+      import initApp from "/src/main.jsx";
+      console.log(initApp);
+      initApp(document.getElementById("root"));
+    </script>
   </body>
 </html>
