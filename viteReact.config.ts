@@ -8,6 +8,7 @@ export default defineConfig({
   root: "reactComponent",
   publicDir: false,
   build: {
+    sourcemap: true,
     lib: {
       entry: "src/main.jsx",
       name: "Some React Component",
