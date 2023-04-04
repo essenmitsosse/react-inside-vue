@@ -20,6 +20,7 @@ onMounted(() => {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <h1>Vite + Vue</h1>
   <button type="button" @click="count++">
     Vue Button: count is {{ count }}
   </button>
