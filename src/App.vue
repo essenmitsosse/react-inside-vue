@@ -20,7 +20,9 @@ onMounted(() => {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <button type="button" @click="count++">count is {{ count }}</button>
+  <button type="button" @click="count++">
+    Vue Button: count is {{ count }}
+  </button>
   <custom-react :value="count" />
 </template>
 
