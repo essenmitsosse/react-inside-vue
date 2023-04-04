@@ -7,12 +7,20 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
+    "devReact": "vite --config viteReact.config.ts",
+    "buildReact": "tsc && vite build --config viteReact.config.ts",
+    "previewReact": "vite preview --config viteReact.config.ts",
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "prettier": "^2.8.7",
     "typescript": "^4.9.3",
