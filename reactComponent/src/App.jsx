@@ -1,10 +1,7 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "../../public/vite.svg";
 
 function App(props) {
-  const [count, setCount] = useState(parseInt(props.value));
-
   return (
     <div className="App">
       <div>
@@ -17,8 +14,8 @@ function App(props) {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          React button: count is {count}
+        <button onClick={() => props.setValue(parseInt(props.value) + 1)}>
+          React button: count is {props.value}
         </button>
       </div>
     </div>

@@ -31,7 +31,14 @@ class CustomReact extends HTMLElement {
   rerender() {
     this.ReactDOMRoot.render(
       <React.StrictMode>
-        <App value={this.getAttribute("value")} />
+        <App
+          value={this.getAttribute("value")}
+          setValue={(value) =>
+            this.dispatchEvent(
+              new CustomEvent("setValue", { detail: { value } })
+            )
+          }
+        />
       </React.StrictMode>
     );
   }

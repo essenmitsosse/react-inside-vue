@@ -3,6 +3,10 @@ import { onMounted, ref } from "vue";
 
 const count = ref(0);
 
+const setCount = ($event: { detail: { value: number } }) => {
+  count.value = $event.detail.value;
+};
+
 onMounted(() => {
   let script = document.createElement("script");
   script.setAttribute("type", "module");
@@ -24,7 +28,7 @@ onMounted(() => {
   <button type="button" @click="count++">
     Vue Button: count is {{ count }}
   </button>
-  <custom-react :value="count" />
+  <custom-react :value="count" @setValue="setCount" />
 </template>
 
 <style scoped>
